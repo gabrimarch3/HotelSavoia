@@ -14,7 +14,8 @@ const Esperienze = () => {
     fetch("https://hunt4taste.it/api/experiences")
       .then((response) => response.json())
       .then((data) => {
-        setExperiences(data);
+        const filteredExperiences = data.filter(experience => experience.user_id === 4);
+        setExperiences(filteredExperiences);
         setIsLoading(false); // Set loading to false after data is fetched
       })
       .catch((error) => {
@@ -22,7 +23,7 @@ const Esperienze = () => {
         setIsLoading(false); // Ensure loading is set to false even if there's an error
       });
   }, []);
-
+  
   const truncateDescription = (desc) => {
     return desc.length > 100 ? desc.substring(0, 100) + "..." : desc;
   };
@@ -58,7 +59,7 @@ const Esperienze = () => {
                 </p>
                 <div className="mt-6 flex justify-end">
                   <Link legacyBehavior href={`/esperienze/${experience.id}`}>
-                    <a className="text-white hover:text-indigo-900 font-semibold text-sm transition-colors duration-300 bg-[#8B487E] rounded-full py-2 px-4">
+                    <a className="text-white hover:text-indigo-900 font-semibold text-sm transition-colors duration-300 bg-[#485d8b] rounded-full py-2 px-4">
                       {experience.buttonText || 'Scopri'}
                     </a>
                   </Link>

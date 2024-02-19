@@ -104,7 +104,7 @@ const Footer = () => {
             size="secondary"
             aria-label="home"
             style={{
-              backgroundColor: "#8b487e",
+              backgroundColor: "#485d8b",
               marginLeft: "10px",
               marginBottom: "10px",
             }}
@@ -114,26 +114,20 @@ const Footer = () => {
         </Link>
         <BottomNavigationAction
           label="Eventi"
-          icon={<EventOutlinedIcon style={{ color: "#924F85" }} />}
+          icon={<EventOutlinedIcon style={{ color: "#485d8b" }} />}
           className="cursor-pointer"
           onClick={() => router.push("/esperienze")}
         />
         <BottomNavigationAction
           label="Shop"
-          icon={<WineBarOutlinedIcon style={{ color: "#924F85" }} />}
+          icon={<WineBarOutlinedIcon style={{ color: "#485d8b" }} />}
           className="cursor-pointer"
           onClick={() => router.push("/shop")}
-        />
-        <BottomNavigationAction
-          label="Territorio"
-          icon={<ForestOutlinedIcon style={{ color: "#924F85" }} />}
-          className="cursor-pointer"
-          onClick={() => router.push("/")}
         />
         {!isPWAInstalled && (
           <BottomNavigationAction
             label="Installa ora"
-            icon={<AppsOutlinedIcon style={{ color: "#924F85" }} />}
+            icon={<AppsOutlinedIcon style={{ color: "#485d8b" }} />}
             className="cursor-pointer"
             onClick={handleInstallClick}
           />

@@ -38,7 +38,7 @@ const ProductCard = ({ product, onProductClick }) => {
 />
 
 <button
-  className={`bg-[#8B487E] hover:bg-purple-700 text-white font-bold py-2 px-3 rounded-full min-h-[40px] transition-colors duration-300 ${
+  className={`bg-[#485d8b] hover:bg-purple-[#485d8b] text-white font-bold py-2 px-3 rounded-full min-h-[40px] transition-colors duration-300 ${
     added ? "bg-green-500 hover:bg-green-600" : ""
   }`}
   style={{ 

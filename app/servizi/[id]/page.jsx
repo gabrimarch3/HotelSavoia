@@ -20,7 +20,12 @@ const ServiceDetailPage = () => {
         fetch(`https://hunt4taste.it/api/services/${serviceId}`)
           .then(response => response.json())
           .then(data => {
-            setService(data);
+            if (data.user_id === 4) {
+              setService(data);
+            } else {
+              // Se il servizio non ha user_id uguale a 4, impostalo a null o gestiscilo come desiderato
+              setService(null);
+            }
             setIsLoading(false);
           })
           .catch(error => {
@@ -29,6 +34,7 @@ const ServiceDetailPage = () => {
           });
       }
     }, [serviceId]);
+    
   
    
     if (isLoading) {

@@ -28,16 +28,16 @@ const HamburgerMenu = () => {
     const fetchSections = async () => {
       try {
         const response = await axios.get('https://hunt4taste.it/api/sections');
-        console.log(response);
-        setSections(response.data);
+        const filteredSections = response.data.filter(section => section.user_id === 4);
+        setSections(filteredSections);
       } catch (error) {
         console.error('Error fetching sections:', error);
       }
     };
-
+  
     fetchSections();
   }, []);
-
+  
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
@@ -50,7 +50,6 @@ const HamburgerMenu = () => {
     { text: 'Servizi', href: '/wine-house', icon: <WineBarIcon /> },
     { text: 'Esperienze', href: '/esperienze', icon: <ExperienceIcon /> },
     { text: 'Shop', href: '/shop', icon: <ShopIcon /> },
-    { text: 'Contatti', href: '/contatti', icon: <ContactIcon /> },
   ];
 
   return (
@@ -65,9 +64,9 @@ const HamburgerMenu = () => {
   onKeyDown={toggleDrawer(false)}
   className="w-80 flex flex-col h-full" 
 >
-<div className="flex items-center justify-between p-4 bg-[#924F85] text-white" style={{ position: 'relative', height: '64px' }}>
+<div className="flex items-center justify-between p-4 bg-[#485d8b] text-white" style={{ position: 'relative', height: '64px' }}>
   <div style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-    <img src='https://img.freepik.com/free-vector/wine-logo-template_1195-35.jpg?w=1380&t=st=1705658673~exp=1705659273~hmac=a33f9f1a07c8b9750f6575fb3284c4a3b554fa9a49eb9ad3151e9c9cee30ce37' alt="Hunt for Taste Logo" style={{ maxHeight: '100px', maxWidth: '100px' }} className='rounded-xl' />
+    <img src='https://scontent.frmi1-2.fna.fbcdn.net/v/t39.30808-6/309722054_524865076311213_6389479323561781529_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=K5XUP2yXAFUAX9WnRNi&_nc_ht=scontent.frmi1-2.fna&oh=00_AfB1Wtwb44S11uqutytNOjquAgm1oDHjdL1ZOkijb-KKOw&oe=65D776E9' alt="Hunt for Taste Logo" style={{ maxHeight: '100px', maxWidth: '100px' }} className='rounded-xl' />
   </div>
   <IconButton onClick={toggleDrawer(false)} className="text-white">
     <IoMdClose size={24} />
@@ -87,7 +86,7 @@ const HamburgerMenu = () => {
           onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
           className='w-full'
         >
-          <ListItemIcon style={{ color: '#8B487E', minWidth: '35px' }}>
+          <ListItemIcon style={{ color: '#485d8b', minWidth: '35px' }}>
             {item.icon}
           </ListItemIcon>
           <ListItemText primary={item.text} style={{ fontWeight: 'bold' }} />
@@ -111,7 +110,7 @@ const HamburgerMenu = () => {
           ))}
         </List>
   {/* Footer Section */}
-  <div className="mt-auto w-full self-end bg-[#924F85] text-white p-4">
+  <div className="mt-auto w-full self-end bg-[#485d8b] text-white p-4">
     <p className="text-lg font-bold text-center mb-4">Seguici sui social!</p>
     <div className="flex justify-center space-x-4">
       <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">

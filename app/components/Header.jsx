@@ -6,9 +6,9 @@ import '../slideshow.css'
 
 const Header = () => {
   const images = [
-    "https://images.pexels.com/photos/2339181/pexels-photo-2339181.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/51947/tuscany-grape-field-nature-51947.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/943700/pexels-photo-943700.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://www.savoiahotelrimini.com/wp-content/uploads/2022/08/Slide-Spa-01-Savoia-Hotel-Rimini-2000x1250.jpg",
+    "https://www.savoiahotelrimini.com/wp-content/uploads/2022/08/Slide-Spa-02-Savoia-Hotel-Rimini-2000x1250.jpg",
+    "https://www.savoiahotelrimini.com/wp-content/uploads/2022/09/933_11617_228683-1170x780.jpg",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -51,7 +51,7 @@ const Header = () => {
           style={{ top: "75%" }}
         >
           <img
-            src="https://img.freepik.com/free-vector/wine-logo-template_1195-35.jpg?w=1380&t=st=1705658673~exp=1705659273~hmac=a33f9f1a07c8b9750f6575fb3284c4a3b554fa9a49eb9ad3151e9c9cee30ce37"
+            src="https://scontent.frmi1-2.fna.fbcdn.net/v/t39.30808-6/309722054_524865076311213_6389479323561781529_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=K5XUP2yXAFUAX9WnRNi&_nc_ht=scontent.frmi1-2.fna&oh=00_AfB1Wtwb44S11uqutytNOjquAgm1oDHjdL1ZOkijb-KKOw&oe=65D776E9"
             alt="Logo"
             className="w-[120px] h-[120px] rounded-lg z-10"
           />

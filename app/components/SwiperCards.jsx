@@ -16,14 +16,26 @@ SwiperCore.use([Pagination, Scrollbar]);
 export default function SwiperCards({ isLoading }) {
   const [cards, setCards] = useState([]);
 
+  function truncateText(text, maxLength) {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + "...";
+    }
+    return text;
+  }
+  
+
   useEffect(() => {
     if (!isLoading) {
       fetch("https://hunt4taste.it/api/cards")
         .then((response) => response.json())
-        .then((data) => setCards(data))
+        .then((data) => {
+            const filteredCards = data.filter(card => card.user_id === 4);
+            setCards(filteredCards);
+        })
         .catch((error) => console.error("Errore nella chiamata API:", error));
     }
-  }, [isLoading]);
+}, [isLoading]);
+
 
   return (
     <Swiper
@@ -89,14 +101,14 @@ export default function SwiperCards({ isLoading }) {
     <SwiperSlide key={card.id} className="flex flex-col items-center bg-white rounded-xl overflow-hidden shadow-lg m-2 min-h-[300px]">
       <Link href={`/cards/${card.id}`} legacyBehavior>
         <a className="w-full h-56 object-cover rounded-t-xl">
-        <Image src={card.image} alt={card.title} layout="responsive" width={500} height={280} objectFit="cover" className="w-full h-56 rounded-t-xl" />
-
+          <Image src={card.image} alt={card.title} layout="responsive" width={500} height={280} objectFit="cover" className="w-full h-56 rounded-t-xl" />
+  
           <div className="px-5 py-3 flex-1 flex flex-col justify-between">
             <div className="flex items-center justify-start space-x-2">
-              <FaWineBottle className="text-[#8B487E]" size={24} />
-              <h3 className="text-xl font-semibold text-[#8B487E]">{card.title}</h3>
+              <FaWineBottle className="text-[#485d8b]" size={24} />
+              <h3 className="text-xl font-semibold text-[#485d8b]">{truncateText(card.title, 25)}</h3> {/* Esempio: Tronca il titolo a 25 caratteri */}
             </div>
-            <p className="text-[#5D5D5D] text-sm text-left mt-2">{card.description}</p>
+            <p className="text-[#5D5D5D] text-sm text-left mt-2">{truncateText(card.description, 50)}</p> {/* Esempio: Tronca la descrizione a 50 caratteri */}
           </div>
         </a>
       </Link>

@@ -78,14 +78,14 @@ const WineHouse = (props) => {
   
       {/* Refined Typography and Spacing */}
       <div className="flex flex-col w-full px-5 py-3">
-        <h3 className="text-3xl text-[#863854] font-semibold mb-3 lg:mb-5 lg:mt-3">{card.title}</h3>
+        <h3 className="text-3xl text-[#485d8b] font-semibold mb-3 lg:mb-5 lg:mt-3">{card.title}</h3>
         <p className="text-gray-600 font-medium lg:px-5">
           {card.description}
         </p>
         {/* Map over the pages to display titles and contents */}
         {card.pages.map(page => (
           <div key={page.id} className="my-4">
-            <h4 className="text-xl text-[#863854] font-semibold mb-2">{page.title}</h4>
+            <h4 className="text-xl text-[#3f5177] font-semibold mb-2">{page.title}</h4>
             <p className="text-gray-600">{page.content}</p>
           </div>
         ))}

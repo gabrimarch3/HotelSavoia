@@ -19,7 +19,7 @@ const NavigationHeader = () => {
   };
 
   return (
-    <div className='w-full h-[89.45px] bg-[#863854] rounded-b-3xl flex justify-between items-center p-10'>
+    <div className='w-full h-[89.45px] bg-[#485d8b] rounded-b-3xl flex justify-between items-center p-10'>
         <HamburgerMenu />
         <h2 className='text-white font-light text-xl self-center'>{title}</h2>
         <FaArrowLeft className='w-6 h-6 text-white' onClick={goBack} /> {/* Attach goBack function to onClick */}

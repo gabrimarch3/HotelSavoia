@@ -24,7 +24,7 @@ export default function SubscriptionForm() {
                 <input type="text" className='w-full border-b border-b-[#5D5D5D] bg-transparent text-gray-600 mb-10 font-thin' placeholder='Nome e Cognome' />
                 <div className='flex flex-col xl:flex-row md:ml-0'>
                     <input type="email" className='w-full border-b border-b-[#5D5D5D] bg-transparent text-gray-600 font-thin' placeholder='Email' />
-                    <button type='submit' className='xl:ml-20 mt-9 xl:mt-0 text-center font-light bg-[#8B487E] w-full rounded-xl text-white h-10'>Iscriviti</button>
+                    <button type='submit' className='xl:ml-20 mt-9 xl:mt-0 text-center font-light bg-[#485d8b] w-full rounded-xl text-white h-10'>Iscriviti</button>
                 </div>
             </form>
         </div>

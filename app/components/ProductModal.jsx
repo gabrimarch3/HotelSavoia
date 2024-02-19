@@ -23,7 +23,7 @@ const StyledDialog = styled(Dialog)(({ theme }) => ({
 }));
 
 const StyledDialogTitle = styled(DialogTitle)(({ theme }) => ({
-  background: "#8B487E",
+  background: "#485d8b",
   color: "white",
   padding: theme.spacing(2),
   display: "flex",
@@ -178,22 +178,6 @@ const ProductModal = ({ isOpen, onClose, product, addToCart }) => {
             <p className="text-gray-600 font-light">
               {getTranslation().description}
             </p>
-            <div className="flex items-center gap-2 font-light">
-              <BsCalendar2Date className="w-8 h-8" />
-              <p>Annata: {product.year}</p>
-            </div>
-            <div className="flex items-center gap-2 font-light">
-              <LiaWineBottleSolid className="w-8 h-8" />
-              <p>Alcol: {product.alcol}</p>
-            </div>
-            <div className="flex items-center gap-2 font-light">
-              <TbTemperature className="w-8 h-8" />
-              <p>Temperatura di servizio: {product.service_temp}°C</p>
-            </div>
-            <div className="flex items-center gap-2 font-light">
-              <LiaCheeseSolid className="w-8 h-8" />
-              <p>Abbinamenti: {product.pairings}</p>
-            </div>
           </div>
         </div>
       </StyledDialogContent>

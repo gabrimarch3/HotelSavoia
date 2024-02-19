@@ -40,37 +40,40 @@ const Shop = () => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get("https://hunt4taste.it/api/categories");
-        setCategories(response.data);
+        const filteredCategories = response.data.filter(category => category.user_id === 4);
+        setCategories(filteredCategories);
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
     };
-
+  
     const fetchSubcategories = async () => {
       try {
         const response = await axios.get("https://hunt4taste.it/api/subcategories");
-        setSubcategories(response.data);
+        const filteredSubcategories = response.data.filter(subcategory => subcategory.user_id === 4);
+        setSubcategories(filteredSubcategories);
       } catch (error) {
         console.error("Error fetching subcategories:", error);
       }
     };
-
+  
     const fetchProducts = async () => {
       setIsLoading(true);
       try {
         const response = await axios.get("https://hunt4taste.it/api/products");
-        setProducts(response.data);
+        const filteredProducts = response.data.filter(product => product.user_id === 4);
+        setProducts(filteredProducts);
       } catch (error) {
         setError(error.message);
       }
       setIsLoading(false);
     };
-
+  
     fetchCategories();
     fetchSubcategories();
     fetchProducts();
   }, []);
-
+  
   useEffect(() => {
     const handleScroll = () => {
       if (footerRef.current) {
@@ -153,7 +156,7 @@ const Shop = () => {
             <input
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="   Cosa vuoi bere..."
+              placeholder="   Cerca tra i nostri prodotti..."
               className="w-full h-12 rounded-lg bg-white text-sm text-gray-700 outline-none shadow-xl mb-3"
             />
           </div>
@@ -206,7 +209,7 @@ const Shop = () => {
               color="primary"
               onClick={toggleCartDrawer(true)}
               style={{
-                backgroundColor: "#8B487E",
+                backgroundColor: "#485d8b",
                 boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                 borderRadius: "50%",
                 width: "56px",

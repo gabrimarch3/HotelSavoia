@@ -76,11 +76,11 @@ const PrenotaEsperienza = () => {
               <p className="font-sm text-[#707070] ml-2">{esperienza.cost}</p>
             </div>
           </div>
-          <h1 className="text-md text-[#8B487E] font-bold mb-4 mt-4">{esperienza.title}</h1>
+          <h1 className="text-md text-[#485d8b] font-bold mb-4 mt-4">{esperienza.title}</h1>
         </div>
         <p className="text-gray-700 mb-4">{esperienza.description}</p>
         <div className="flex justify-center mt-4">
-          <button onClick={handleBook} className="bg-[#8B487E] w-[200px] mt-20 text-white py-2 px-4 rounded-full hover:bg-purple-700 transition duration-300">
+          <button onClick={handleBook} className="bg-[#485d8b] w-[200px] mt-20 text-white py-2 px-4 rounded-full hover:bg-purple-700 transition duration-300">
             Prenota
           </button>
         </div>

@@ -25,9 +25,14 @@ export default function ServicesSection(props) {
   useEffect(() => {
     fetch("https://hunt4taste.it/api/services")
       .then((response) => response.json())
-      .then((data) => setServices(data))
+      .then((data) => {
+          const filteredServices = data.filter(service => service.user_id === 4);
+          setServices(filteredServices);
+          console.log(filteredServices);
+      })
       .catch((error) => console.error("Error fetching data: ", error));
   }, []);
+
 
   const styles = {
     card: {
