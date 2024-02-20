@@ -99,31 +99,26 @@ export default function SwiperCards({ isLoading }) {
   ))
 ) : (
   cards.map((card) => (
-    <SwiperSlide key={card.id} className="flex flex-col items-center bg-white rounded-xl overflow-hidden shadow-lg m-2 min-h-[400px] max-h-[400px]">
+    <SwiperSlide key={card.id} className="flex flex-col items-center bg-white rounded-xl overflow-hidden shadow-lg m-2">
       <Link href={`/cards/${card.id}`} legacyBehavior>
-        <a className="w-full h-56 object-cover rounded-t-xl">
-        <Image
-  src={card.image}
-  alt={card.title}
-  layout="responsive"
-  width={500}
-  height={280}
-  objectFit="cover"
-  objectPosition="center center" // Assicura che il crop venga fatto centralmente
-  className="w-full min-h-[280px] max-h-[350px] rounded-t-xl"
-/>
-  
-          <div className="px-5 py-3 flex-1 flex flex-col justify-between">
-            <div className="flex items-center justify-start space-x-2">
-              <BiHotel className="text-[#485d8b]" size={24} />
-              <h3 className="text-xl font-semibold text-[#485d8b]">{truncateText(card.title, 40)}</h3> {/* Esempio: Tronca il titolo a 25 caratteri */}
-            </div>
-            <p className="text-[#5D5D5D] text-sm text-left mt-2 overflow-hidden">{truncateText(card.description, 80)}</p> {/* Esempio: Tronca la descrizione a 50 caratteri */}
-          </div>
+        <a className="block w-full h-56 overflow-hidden">
+          <img
+            src={card.image}
+            alt={card.title}
+            className="w-full h-full object-cover object-center transform scale-110"
+          />
         </a>
       </Link>
+      <div className="px-5 py-3 flex-1 flex flex-col justify-between">
+        <div className="flex items-center justify-start space-x-2">
+          <BiHotel className="text-[#485d8b]" size={24} />
+          <h3 className="text-xl font-semibold text-[#485d8b]">{truncateText(card.title, 40)}</h3>
+        </div>
+        <p className="text-[#5D5D5D] text-sm text-left mt-2 overflow-hidden">{truncateText(card.description, 80)}</p>
+      </div>
     </SwiperSlide>
   ))
+  
 )}
 
     </Swiper>
