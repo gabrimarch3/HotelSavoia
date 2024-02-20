@@ -93,7 +93,7 @@ const WineHouse = (props) => {
   
       {/* Enhanced "IN CANTINA" Section */}
       <div className="pl-5 pt-5 pb-10 lg:px-5">
-        <h3 className="text-2xl text-[#7B7C7C] mb-4">IN CANTINA</h3>
+        <h3 className="text-2xl text-[#7B7C7C] mb-4">IN HOTEL</h3>
         <SwiperCards />
       </div>
   

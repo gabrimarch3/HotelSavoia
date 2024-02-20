@@ -1,14 +1,13 @@
 'use client';
 import React, { useState, useEffect } from "react";
 import NavigationHeader from "../components/NavigationHeader";
-import ExperienceCard from "../components/ExperienceCard";
 import Footer from "../components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 
 const Esperienze = () => {
   const [experiences, setExperiences] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // Adding a loading state
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://hunt4taste.it/api/experiences")
@@ -16,14 +15,14 @@ const Esperienze = () => {
       .then((data) => {
         const filteredExperiences = data.filter(experience => experience.user_id === 4);
         setExperiences(filteredExperiences);
-        setIsLoading(false); // Set loading to false after data is fetched
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Errore nella chiamata API:", error);
-        setIsLoading(false); // Ensure loading is set to false even if there's an error
+        setIsLoading(false);
       });
   }, []);
-  
+
   const truncateDescription = (desc) => {
     return desc.length > 100 ? desc.substring(0, 100) + "..." : desc;
   };
@@ -33,7 +32,7 @@ const Esperienze = () => {
       <div className="flex flex-col min-h-screen justify-center items-center">
         <p>Loading...</p>
       </div>
-    ); // Simple loading state UI
+    );
   }
 
   return (
@@ -43,23 +42,22 @@ const Esperienze = () => {
         <div className="container mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {experiences.map((experience) => (
             <div
-              className="flex flex-col bg-white rounded-lg shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg"
+              className="flex flex-col bg-white rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out"
               key={experience.id}
             >
-              <div className="flex-shrink-0">
-              <Image src={experience.image_url} alt={experience.title} layout="responsive" width={500} height={300} objectFit="cover" className="w-full h-48 rounded-t-lg" />
-
+              <div className="relative w-full h-60">
+                <Image src={experience.image_url} alt={experience.title} layout="fill" objectFit="cover" className="rounded-t-xl" />
               </div>
-              <div className="flex-1 bg-white p-6 flex flex-col justify-between">
-                <h3 className="text-gray-900 text-xl font-semibold mb-3">
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-[#485d8b] mb-3">
                   {experience.title}
                 </h3>
-                <p className="text-gray-600 text-sm flex-1">
+                <p className="text-base text-gray-700 flex-1">
                   {truncateDescription(experience.description)}
                 </p>
                 <div className="mt-6 flex justify-end">
                   <Link legacyBehavior href={`/esperienze/${experience.id}`}>
-                    <a className="text-white hover:text-indigo-900 font-semibold text-sm transition-colors duration-300 bg-[#485d8b] rounded-full py-2 px-4">
+                    <a className="text-white bg-[#485d8b] hover:bg-[#485d8b] rounded-full py-2 px-4 transition-colors duration-300 ease-out font-semibold text-sm">
                       {experience.buttonText || 'Scopri'}
                     </a>
                   </Link>
@@ -75,4 +73,3 @@ const Esperienze = () => {
 };
 
 export default Esperienze;
-

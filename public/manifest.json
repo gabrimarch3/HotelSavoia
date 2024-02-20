@@ -4,9 +4,9 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "Hunt4Taste",
-  "short_name": "Hunt4Taste",
-  "description": "La tua cantina a portata di TAP!",
+  "name": "Hotel Savoia Rimini",
+  "short_name": "Hotel savoia",
+  "description": "UN HOTEL PROGETTATO PER AMMIRARE IL MARE",
   "icons": [
     {
       "src": "/icon-192x192.png",

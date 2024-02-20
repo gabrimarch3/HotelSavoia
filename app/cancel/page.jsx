@@ -17,7 +17,7 @@ const CancelPayment = () => {
       <NavigationHeader title="Pagamento annullato" />
 
       <main className="flex-1 flex flex-col items-center justify-center">
-        <h1 className="text-3xl font-bold text-[#8B487E]">
+        <h1 className="text-3xl font-bold text-[#485d8b]">
           Pagamento annullato
         </h1>
 
@@ -26,7 +26,7 @@ const CancelPayment = () => {
           per assistenza.
         </p>
 
-        <button onClick={handleGoHome} className="mt-8 px-4 py-2 bg-[#8B487E] text-white rounded-md hover:bg-purple-600">
+        <button onClick={handleGoHome} className="mt-8 px-4 py-2 bg-[#485d8b] text-white rounded-md hover:bg-[#485d8b]">
           Torna alla home
         </button>
       </main>

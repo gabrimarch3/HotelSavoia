@@ -17,7 +17,7 @@ import ContactIcon from '@mui/icons-material/Email'; // Icona esemplificativa pe
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoMdClose } from 'react-icons/io'; // Icona per chiudere il menu
 import WineBarIcon from '@mui/icons-material/WineBar';
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaShoppingBag } from 'react-icons/fa';
 
 
 const HamburgerMenu = () => {
@@ -47,9 +47,8 @@ const HamburgerMenu = () => {
 
   const menuItems = [
     { text: 'Home', href: '/', icon: <HomeIcon /> },
-    { text: 'Servizi', href: '/wine-house', icon: <WineBarIcon /> },
     { text: 'Esperienze', href: '/esperienze', icon: <ExperienceIcon /> },
-    { text: 'Shop', href: '/shop', icon: <ShopIcon /> },
+    { text: 'Shop', href: '/shop', icon: <FaShoppingBag /> },
   ];
 
   return (

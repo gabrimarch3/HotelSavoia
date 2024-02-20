@@ -76,7 +76,7 @@ const ServiceDetailPage = () => {
             </div>
     
             <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-4">In Cantina</h3>
+              <h3 className="text-xl font-semibold mb-4">In Hotel</h3>
               <SwiperCards />
             </div>
           </div>

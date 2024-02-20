@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Scrollbar } from 'swiper';
 import { FaWineBottle } from "react-icons/fa";
+import { BiHotel } from "react-icons/bi";
 import Skeleton from "@mui/material/Skeleton";
 import Link from "next/link";
 import Image from "next/image";
@@ -98,17 +99,17 @@ export default function SwiperCards({ isLoading }) {
   ))
 ) : (
   cards.map((card) => (
-    <SwiperSlide key={card.id} className="flex flex-col items-center bg-white rounded-xl overflow-hidden shadow-lg m-2 min-h-[300px]">
+    <SwiperSlide key={card.id} className="flex flex-col items-center bg-white rounded-xl overflow-hidden shadow-lg m-2 min-h-[400px] max-h-[400px]">
       <Link href={`/cards/${card.id}`} legacyBehavior>
         <a className="w-full h-56 object-cover rounded-t-xl">
-          <Image src={card.image} alt={card.title} layout="responsive" width={500} height={280} objectFit="cover" className="w-full h-56 rounded-t-xl" />
+          <Image src={card.image} alt={card.title} layout="responsive" width={500} height={280} objectFit="cover" className="w-full min-h-[280px] max-h-[350px] rounded-t-xl" />
   
           <div className="px-5 py-3 flex-1 flex flex-col justify-between">
             <div className="flex items-center justify-start space-x-2">
-              <FaWineBottle className="text-[#485d8b]" size={24} />
-              <h3 className="text-xl font-semibold text-[#485d8b]">{truncateText(card.title, 25)}</h3> {/* Esempio: Tronca il titolo a 25 caratteri */}
+              <BiHotel className="text-[#485d8b]" size={24} />
+              <h3 className="text-xl font-semibold text-[#485d8b]">{truncateText(card.title, 40)}</h3> {/* Esempio: Tronca il titolo a 25 caratteri */}
             </div>
-            <p className="text-[#5D5D5D] text-sm text-left mt-2">{truncateText(card.description, 50)}</p> {/* Esempio: Tronca la descrizione a 50 caratteri */}
+            <p className="text-[#5D5D5D] text-sm text-left mt-2 overflow-hidden">{truncateText(card.description, 80)}</p> {/* Esempio: Tronca la descrizione a 50 caratteri */}
           </div>
         </a>
       </Link>

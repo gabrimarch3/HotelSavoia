@@ -15,6 +15,7 @@ import ForestOutlinedIcon from "@mui/icons-material/ForestOutlined";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
+import {FaShoppingBag} from 'react-icons/fa';
 
 const Footer = () => {
   const router = useRouter();
@@ -113,14 +114,14 @@ const Footer = () => {
           </Fab>
         </Link>
         <BottomNavigationAction
-          label="Eventi"
+          label="Esperienze"
           icon={<EventOutlinedIcon style={{ color: "#485d8b" }} />}
           className="cursor-pointer"
           onClick={() => router.push("/esperienze")}
         />
         <BottomNavigationAction
           label="Shop"
-          icon={<WineBarOutlinedIcon style={{ color: "#485d8b" }} />}
+          icon={<FaShoppingBag style={{ color: "#485d8b" }} />}
           className="cursor-pointer"
           onClick={() => router.push("/shop")}
         />
