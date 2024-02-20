@@ -3,15 +3,14 @@ import React, { useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import NavigationHeader from "../../components/NavigationHeader";
 import Footer from "../../components/Footer";
-import SwiperCards from "../../components/SwiperCards"; // Assumendo che vuoi mostrare altre carte di servizi correlati
-import "swiper/css"; // Assicurati di importare gli stili necessari per Swiper
+import SwiperCards from "../../components/SwiperCards";
 import ServicesSection from '../../components/Services';
 import { FaTag , FaEuroSign } from "react-icons/fa";
 import Image from 'next/image';
 
 const ServiceDetailPage = () => {
     const pathname = usePathname();
-    const serviceId = pathname.split('/')[2]; // Assumendo che l'URL sia /servizi/{id}
+    const serviceId = pathname.split('/')[2];
     const [service, setService] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
   
@@ -23,7 +22,6 @@ const ServiceDetailPage = () => {
             if (data.user_id === 4) {
               setService(data);
             } else {
-              // Se il servizio non ha user_id uguale a 4, impostalo a null o gestiscilo come desiderato
               setService(null);
             }
             setIsLoading(false);
@@ -35,8 +33,6 @@ const ServiceDetailPage = () => {
       }
     }, [serviceId]);
     
-  
-   
     if (isLoading) {
         return <div className="flex justify-center items-center h-screen">Caricamento...</div>;
     }
@@ -46,37 +42,37 @@ const ServiceDetailPage = () => {
     }
     
     return (
-        <div className="bg-gray-100 text-gray-800 font-serif min-h-screen">
+        <div className="bg-white text-gray-800 font-sans min-h-screen flex flex-col">
           <NavigationHeader />
     
-          <div className="container mx-auto p-6">
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <Image src={service.image} alt={service.title} layout="responsive" width={500} height={300} objectFit="cover" className="w-full h-64" />
-              <div className="p-4 space-y-4">
-                <h2 className="text-3xl font-bold">{service.title}</h2>
-                <p>{service.description}</p>
+          <div className="container mx-auto my-8 p-4">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <Image src={service.image} alt={service.title} layout="responsive" width={500} height={300} objectFit="cover" className="w-full" />
+              <div className="p-6 space-y-4">
+                <h2 className="text-3xl text-blue-800 font-semibold">{service.title}</h2>
+                <p className="text-gray-600 text-lg">{service.description}</p>
                 {service.cost && (
-                  <div className="flex items-center">
-                    <FaEuroSign className="text-lg text-gray-600 mr-2" />
-                    <p className="text-lg text-gray-600">Costo: €{service.cost}</p>
+                  <div className="flex items-center text-lg text-gray-600">
+                    <FaEuroSign className="mr-2" />
+                    <p>Costo: €{service.cost}</p>
                   </div>
                 )}
                 {service.category && (
-                  <div className="flex items-center">
-                    <FaTag className="text-lg text-gray-600 mr-2" />
-                    <p className="text-gray-600">Categoria: {service.category}</p>
+                  <div className="flex items-center text-lg text-gray-600">
+                    <FaTag className="mr-2" />
+                    <p>Categoria: {service.category}</p>
                   </div>
                 )}
               </div>
             </div>
     
             <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-4">Servizi Correlati</h3>
-              <ServicesSection isLoading={false} />
+              <h3 className="text-2xl text-gray-700 font-semibold mb-4">Servizi Correlati</h3>
+              <ServicesSection />
             </div>
     
             <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-4">In Hotel</h3>
+              <h3 className="text-2xl text-gray-700 font-semibold mb-4">In Hotel</h3>
               <SwiperCards />
             </div>
           </div>

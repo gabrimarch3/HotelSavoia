@@ -8,8 +8,8 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  title: "Hunt4Taste",
-  description: "La tua cantina a portata di tap!",
+  title: "Savoia Hotel Rimini",
+  description: "Il tuo Hotel preferito, a portata di TAP!",
   manifest: '/manifest.json',
 };
 

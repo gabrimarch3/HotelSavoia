@@ -84,8 +84,8 @@ export default function ServicesSection(props) {
             spaceBetween: 200,
           },
           1500: {
-            slidesPerView: 8,
-            spaceBetween: 200,
+            slidesPerView: 5,
+            spaceBetween: 260,
           },
         }}
         modules={[Scrollbar]}
