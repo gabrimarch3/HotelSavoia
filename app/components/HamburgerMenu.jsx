@@ -65,7 +65,7 @@ const HamburgerMenu = () => {
 >
 <div className="flex items-center justify-between p-4 bg-[#485d8b] text-white" style={{ position: 'relative', height: '64px' }}>
   <div style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-    <img src='https://scontent.frmi1-2.fna.fbcdn.net/v/t39.30808-6/309722054_524865076311213_6389479323561781529_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=K5XUP2yXAFUAX9WnRNi&_nc_ht=scontent.frmi1-2.fna&oh=00_AfB1Wtwb44S11uqutytNOjquAgm1oDHjdL1ZOkijb-KKOw&oe=65D776E9' alt="Hunt for Taste Logo" style={{ maxHeight: '100px', maxWidth: '100px' }} className='rounded-xl' />
+    <img src='https://scontent.fblq4-1.fna.fbcdn.net/v/t39.30808-6/429661223_898445618953155_4799295569043375114_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=-8pJlHvQrmYAX8F1nJe&_nc_ht=scontent.fblq4-1.fna&oh=00_AfAohzKhLE-mwJvQbi14Aut_oe1UP-p7BAvZnDotnwpQ4A&oe=6608E344' alt="Hunt for Taste Logo" style={{ maxHeight: '100px', maxWidth: '100px' }} className='rounded-xl' />
   </div>
   <IconButton onClick={toggleDrawer(false)} className="text-white">
     <IoMdClose size={24} />
